@@ -10,18 +10,38 @@ button.addEventListener('click', () => {
     } else {
         const toDo = document.createElement('li');
         toDo.classList.add('to-do');
-        toDo.textContent = input.value;
+
+        const toDoText = document.createElement('p');
+        toDoText.classList.add('to-do-text');
+        toDoText.textContent = input.value;
         input.value = '';
 
+        const controlContainer = document.createElement('div');
+        controlContainer.classList.add('control-container');
+
+        const editBtn = document.createElement('button');
+        editBtn.classList.add('control-btn');
+        editBtn.textContent = '✏️';
+
+        editBtn.addEventListener('click', () => {
+            const newText = prompt('Change your text:', toDoText.textContent);
+            if (newText !== null) {
+                toDoText.textContent = newText;
+            }
+        });
+
         const closeBtn = document.createElement('button');
-        closeBtn.classList.add('close-btn');
+        closeBtn.classList.add('control-btn');
         closeBtn.textContent = '❌';
 
         closeBtn.addEventListener('click', () => {
             toDo.remove();
         });
 
-        toDo.appendChild(closeBtn);
+        controlContainer.appendChild(editBtn);
+        controlContainer.appendChild(closeBtn);
+        toDo.appendChild(toDoText);
+        toDo.appendChild(controlContainer);
 
         todoList.appendChild(toDo);
     }

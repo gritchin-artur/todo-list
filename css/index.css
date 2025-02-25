@@ -72,21 +72,29 @@ body {
     padding: 0.5vw;
     display: flex;
     justify-content: space-between;
-    font-size: 1vw;
     align-items: center;
 }
 
-.close-btn {
+.to-do-text {
+    font-size: 1.5vw;
+}
+
+.control-container {
+    display: flex;
+    gap: 1vw;
+}
+
+.control-btn {
     cursor: pointer;
     border: none;
     background-color: none;
     transition: transform 0.2s;
 }
 
-.close-btn:hover {
+.control-btn:hover {
     transform: scale(1.1);
 }
 
-.close-btn:active {
+.control-btn:active {
     transform: scale(0.9);
 }
