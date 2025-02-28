@@ -87,7 +87,7 @@ body {
 .control-btn {
     cursor: pointer;
     border: none;
-    background-color: none;
+    background-color: transparent;
     transition: transform 0.2s;
 }
 
